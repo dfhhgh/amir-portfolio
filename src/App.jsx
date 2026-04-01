@@ -39,7 +39,7 @@ function Navbar() {
 /* ================= HERO ================= */
 function Hero() {
   return (
-    <section className="section">
+    <section className="section hero">
       <h1 className="gradient-text">Frontend Developer</h1>
       <p>I build modern and responsive web apps</p>
     </section>
@@ -73,10 +73,10 @@ function BookAppGallery() {
     <section className="section">
       <h2 className="gradient-text">Book App Project</h2>
 
-      <div className="gallery">
+      <div className="grid">
         {images.map((img, i) => (
-          <div key={i} className="card">
-            <img src={img} alt="book app" />
+          <div key={i} className="card-hover">
+            <img src={img} alt="book app" className="img" />
           </div>
         ))}
       </div>
@@ -96,10 +96,10 @@ function Certifications() {
     <section id="certifications" className="section">
       <h2 className="gradient-text">Certifications</h2>
 
-      <div className="gallery">
+      <div className="grid">
         {certs.map((cert, i) => (
-          <div key={i} className="card">
-            <img src={cert.img} alt={cert.title} />
+          <div key={i} className="card-hover cert-card">
+            <img src={cert.img} alt={cert.title} className="img" />
             <div className="card-body">
               <h3>{cert.title}</h3>
               <p>HackerRank</p>
