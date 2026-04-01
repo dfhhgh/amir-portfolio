@@ -62,7 +62,11 @@ function Hero() {
   const [ref, visible] = useInView();
 
   return (
-    <section ref={ref} className={`section ${visible ? "show" : ""}`}>
+    <section
+      ref={ref}
+      className={`section ${visible ? "show" : ""}`}
+      style={{ paddingTop: "140px" }}  // 🔥 مهم عشان navbar
+    >
       <h1 className="gradient-text">Frontend Developer</h1>
       <p>I build modern and responsive web apps</p>
     </section>
@@ -105,7 +109,7 @@ function BookAppGallery() {
       <div className="grid">
         {images.map((img, i) => (
           <div key={i} className="card-hover">
-            <img src={img} className="img" />
+            <img src={img} alt="book app" className="book-img" />
           </div>
         ))}
       </div>
@@ -134,7 +138,8 @@ function Certifications() {
       <div className="grid">
         {certs.map((cert, i) => (
           <div key={i} className="card-hover">
-            <img src={cert.img} className="img" />
+            <img src={cert.img} alt={cert.title} className="cert-img" />
+
             <div className="card-body">
               <h3>{cert.title}</h3>
               <p>HackerRank</p>
