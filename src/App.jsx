@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-// ── Font injection ──────────────────────────────────────────────────────────
+// ── Font injection ─────────────────────────────────────────────────────────
 const FontLoader = () => {
   useEffect(() => {
     const link = document.createElement("link");
