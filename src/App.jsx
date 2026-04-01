@@ -1,12 +1,11 @@
 import { useEffect } from "react";
+import "./index.css";
 
-/* ================= IMPORT IMAGES ================= */
-// Book App
+/* ================= IMAGES ================= */
 import home from "./assets/home.png";
 import search from "./assets/search.png";
 import filter from "./assets/filter.png";
-import "./index.css";
-// Certificates
+
 import basic from "./assets/sql-basic.png";
 import inter from "./assets/sql-intermediate.png";
 import adv from "./assets/sql-advanced.png";
@@ -26,18 +25,9 @@ const FontLoader = () => {
 /* ================= NAVBAR ================= */
 function Navbar() {
   return (
-    <nav style={{
-      padding: "20px 5%",
-      display: "flex",
-      justifyContent: "space-between",
-      position: "fixed",
-      width: "100%",
-      top: 0,
-      background: "#060609",
-      zIndex: 100
-    }}>
+    <nav className="navbar">
       <h3 className="gradient-text">Amir</h3>
-      <div style={{ display: "flex", gap: 20 }}>
+      <div className="nav-links">
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#certifications">Certifications</a>
@@ -49,7 +39,7 @@ function Navbar() {
 /* ================= HERO ================= */
 function Hero() {
   return (
-    <section style={{ padding: "120px 5%" }}>
+    <section className="section">
       <h1 className="gradient-text">Frontend Developer</h1>
       <p>I build modern and responsive web apps</p>
     </section>
@@ -61,22 +51,12 @@ function Skills() {
   const skills = ["React", "JavaScript", "CSS", "HTML", "Git", ".NET"];
 
   return (
-    <section id="skills" style={{ padding: "80px 5%" }}>
+    <section id="skills" className="section">
       <h2 className="gradient-text">Tools I wield with confidence</h2>
 
-      <div style={{
-        display: "flex",
-        flexWrap: "wrap",
-        gap: 12,
-        marginTop: 20
-      }}>
+      <div className="skills">
         {skills.map((skill, i) => (
-          <span key={i} style={{
-            padding: "10px 18px",
-            borderRadius: 999,
-            border: "1px solid rgba(255,255,255,0.2)",
-            cursor: "pointer"
-          }}>
+          <span key={i} className="skill">
             {skill}
           </span>
         ))}
@@ -90,22 +70,13 @@ function BookAppGallery() {
   const images = [home, search, filter];
 
   return (
-    <section style={{ padding: "80px 5%" }}>
+    <section className="section">
       <h2 className="gradient-text">Book App Project</h2>
 
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))",
-        gap: 20,
-        marginTop: 30
-      }}>
+      <div className="gallery">
         {images.map((img, i) => (
-          <div key={i} style={{
-            borderRadius: 16,
-            overflow: "hidden",
-            border: "1px solid rgba(255,255,255,0.1)"
-          }}>
-            <img src={img} alt="book app" style={{ width: "100%" }} />
+          <div key={i} className="card">
+            <img src={img} alt="book app" />
           </div>
         ))}
       </div>
@@ -122,27 +93,16 @@ function Certifications() {
   ];
 
   return (
-    <section id="certifications" style={{ padding: "80px 5%" }}>
+    <section id="certifications" className="section">
       <h2 className="gradient-text">Certifications</h2>
 
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))",
-        gap: 20,
-        marginTop: 30
-      }}>
+      <div className="gallery">
         {certs.map((cert, i) => (
-          <div key={i} style={{
-            borderRadius: 16,
-            overflow: "hidden",
-            border: "1px solid rgba(255,255,255,0.1)",
-            background: "#0a0a0f"
-          }}>
-            <img src={cert.img} alt={cert.title} style={{ width: "100%" }} />
-
-            <div style={{ padding: 15 }}>
+          <div key={i} className="card">
+            <img src={cert.img} alt={cert.title} />
+            <div className="card-body">
               <h3>{cert.title}</h3>
-              <p style={{ color: "#94a3b8" }}>HackerRank</p>
+              <p>HackerRank</p>
             </div>
           </div>
         ))}
@@ -154,7 +114,7 @@ function Certifications() {
 /* ================= PROJECTS ================= */
 function Projects() {
   return (
-    <section id="projects" style={{ padding: "80px 5%" }}>
+    <section id="projects" className="section">
       <h2 className="gradient-text">Projects</h2>
       <p>More projects coming soon...</p>
     </section>
