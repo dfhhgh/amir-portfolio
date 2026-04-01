@@ -1,4 +1,15 @@
-import { useEffect, } from "react";
+import { useEffect } from "react";
+
+/* ================= IMPORT IMAGES ================= */
+// Book App
+import home from "./assets/home.png";
+import search from "./assets/search.png";
+import filter from "./assets/filter.png";
+
+// Certificates
+import basic from "./assets/sql-basic.png";
+import inter from "./assets/sql-intermediate.png";
+import adv from "./assets/sql-advanced.png";
 
 /* ================= FONT ================= */
 const FontLoader = () => {
@@ -76,11 +87,7 @@ function Skills() {
 
 /* ================= BOOK APP ================= */
 function BookAppGallery() {
-  const images = [
-    "/images/bookapp/home.png",
-    "/images/bookapp/search.png",
-    "/images/bookapp/filter.png"
-  ];
+  const images = [home, search, filter];
 
   return (
     <section style={{ padding: "80px 5%" }}>
@@ -98,7 +105,7 @@ function BookAppGallery() {
             overflow: "hidden",
             border: "1px solid rgba(255,255,255,0.1)"
           }}>
-            <img src={img} style={{ width: "100%" }} />
+            <img src={img} alt="book app" style={{ width: "100%" }} />
           </div>
         ))}
       </div>
@@ -109,9 +116,9 @@ function BookAppGallery() {
 /* ================= CERTIFICATIONS ================= */
 function Certifications() {
   const certs = [
-    { title: "SQL (Basic)", img: "/certs/sql-basic.png" },
-    { title: "SQL (Intermediate)", img: "/certs/sql-intermediate.png" },
-    { title: "SQL (Advanced)", img: "/certs/sql-advanced.png" }
+    { title: "SQL (Basic)", img: basic },
+    { title: "SQL (Intermediate)", img: inter },
+    { title: "SQL (Advanced)", img: adv }
   ];
 
   return (
@@ -131,7 +138,7 @@ function Certifications() {
             border: "1px solid rgba(255,255,255,0.1)",
             background: "#0a0a0f"
           }}>
-            <img src={cert.img} style={{ width: "100%" }} />
+            <img src={cert.img} alt={cert.title} style={{ width: "100%" }} />
 
             <div style={{ padding: 15 }}>
               <h3>{cert.title}</h3>
