@@ -991,7 +991,7 @@ useEffect(() => {
             fontFamily: "'JetBrains Mono', monospace", fontSize: 9,
             color: "rgba(255,255,255,0.3)", letterSpacing: "0.08em",
           }}>
-            {project.screens[activeScreen]?.label}
+            {project?.screens?.[activeScreen]?.label}
           </div>
         </div>
         ) : (
