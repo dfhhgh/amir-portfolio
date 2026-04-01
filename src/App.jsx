@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import home from "./assets/home.png";
 import search from "./assets/search.png";
 import filter from "./assets/filter.png";
-
+import "./index.css";
 // Certificates
 import basic from "./assets/sql-basic.png";
 import inter from "./assets/sql-intermediate.png";
