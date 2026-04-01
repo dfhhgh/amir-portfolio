@@ -819,18 +819,15 @@ function ProjectCard({ project, index }) {
   const hasShowcase = !!project.showcaseImg;
   const isDesktop = project.screenStyle === "desktop";
 
-const screensLength = project.screens.length;
-
 useEffect(() => {
   if (!hasScreens || !hovered) return;
 
   const t = setInterval(() => {
-    setActiveScreen(s => (s + 1) % screensLength);
+    setActiveScreen(s => (s + 1) % project.screens.length);
   }, 1500);
 
   return () => clearInterval(t);
-}, [hovered, hasScreens, screensLength]);
-
+}, [hovered, hasScreens, project.screens.length]);
   return (
     <div
       ref={ref}
@@ -1142,9 +1139,7 @@ useEffect(() => {
             ))}
           </div>
         </div>
-      )
-    }
-    
+      )}
 
       {/* Card body */}
       <div style={{ padding: "28px 28px 32px" }}>
